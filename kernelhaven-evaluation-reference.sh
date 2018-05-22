@@ -7,8 +7,8 @@ JVM_MAX_HEAP=16G
 echo "*** Running as user $(whoami) using basedir: $BASEDIR ..."
 echo "*** Updating KernelHaven ..."
 cd $BASEDIR
-mkdir source-code/linux
-cp config/configuration-reference.properties configuration-reference.properties
+
+yes | cp -rf config/configuration-reference.properties configuration-reference.properties
 
 for file in diffs/*.diff; do
     [ -e "$file" ] || continue
