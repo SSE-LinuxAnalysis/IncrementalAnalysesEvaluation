@@ -8,6 +8,8 @@ echo "*** Running as user $(whoami) using basedir: $BASEDIR ..."
 
 cd $BASEDIR
 
+test -d time/reference || mkdir -p time/reference
+
 yes | cp -rf config/configuration-reference.properties configuration-reference.properties
 
 for file in diffs/*.diff; do
@@ -30,8 +32,8 @@ for file in diffs/*.diff; do
         mv .git.backup .git
     fi
 
-    echo "Running KernelHaven"
-    exec java "-Xms${JVM_MIN_HEAP}" "-Xmx${JVM_MAX_HEAP}" -jar KernelHaven.jar configuration-reference.properties
+    echo "*** Running KernelHaven..."
+    /usr/bin/time -v -o ./time/incremental/time-$file.log java "-Xms${JVM_MIN_HEAP}" "-Xmx${JVM_MAX_HEAP}" -jar KernelHaven.jar configuration-reference.properties & disown
 done
 
 
