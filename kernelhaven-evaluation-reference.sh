@@ -33,8 +33,8 @@ for file in diffs/*.diff; do
     fi
 
     echo "*** Running KernelHaven..."
-    touch ./time/reference/time-${fullfile##*/}.log
-    /usr/bin/time -v -o ./time/reference/time-${fullfile##*/}.log java "-Xms${JVM_MIN_HEAP}" "-Xmx${JVM_MAX_HEAP}" -jar KernelHaven.jar configuration-reference.properties
+    touch ./time/reference/time-${file##*/}.log
+    /usr/bin/time -v -o ./time/reference/time-${file##*/}.log java "-Xms${JVM_MIN_HEAP}" "-Xmx${JVM_MAX_HEAP}" -jar KernelHaven.jar configuration-reference.properties
 done
 
 
