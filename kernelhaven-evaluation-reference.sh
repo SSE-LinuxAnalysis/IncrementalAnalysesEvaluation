@@ -34,7 +34,7 @@ for file in diffs/*.diff; do
 
     echo "*** Running KernelHaven..."
     touch ./time/reference/time-${fullfile##*/}.log
-    /usr/bin/time -v -o ./time/reference/time-${fullfile##*/}.log java "-Xms${JVM_MIN_HEAP}" "-Xmx${JVM_MAX_HEAP}" -jar KernelHaven.jar configuration-reference.properties & disown
+    /usr/bin/time -v -o ./time/reference/time-${fullfile##*/}.log java "-Xms${JVM_MIN_HEAP}" "-Xmx${JVM_MAX_HEAP}" -jar KernelHaven.jar configuration-reference.properties
 done
 
 
