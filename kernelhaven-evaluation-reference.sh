@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/bash -e
 
 BASEDIR=$(dirname "$0")
 JVM_MIN_HEAP=4G
@@ -33,7 +33,7 @@ for file in diffs/*.diff; do
     fi
 
     echo "*** Running KernelHaven..."
-    /usr/bin/time -v -o ./time/incremental/time-$file.log java "-Xms${JVM_MIN_HEAP}" "-Xmx${JVM_MAX_HEAP}" -jar KernelHaven.jar configuration-reference.properties & disown
+    /usr/bin/time -v -o ./time/reference/time-$file.log java "-Xms${JVM_MIN_HEAP}" "-Xmx${JVM_MAX_HEAP}" -jar KernelHaven.jar configuration-reference.properties & disown
 done
 
 
