@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/bash -e
 
 BASEDIR=$(dirname "$0")
 JVM_MIN_HEAP=4G
@@ -18,7 +18,8 @@ for file in diffs/*.diff; do
     [ -e "$file" ] || continue
     echo "Running on file: $file"
     sed "s/$(echo DIFF_FILE_GENERATED_VALUE | sed -e 's/\([[\/.*]\|\]\)/\\&/g')/$(echo $file | sed -e 's/[\/&]/\\&/g')/g" config/configuration-incremental.properties > configuration-incremental.properties
-    /usr/bin/time -v -o ./time/incremental/time-$file.log java "-Xms${JVM_MIN_HEAP}" "-Xmx${JVM_MAX_HEAP}" -jar KernelHaven.jar configuration-incremental.properties & disown
+    touch ./time/reference/time-${file##*/}.log
+    /usr/bin/time -v -o ./time/reference/time-${file##*/}.log java "-Xms${JVM_MIN_HEAP}" "-Xmx${JVM_MAX_HEAP}" -jar KernelHaven.jar configuration-incremental.properties
 done
 
 if [ -d .git.backup ]; then
