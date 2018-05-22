@@ -8,6 +8,10 @@ echo "*** Running as user $(whoami) using basedir: $BASEDIR ..."
 echo "*** Updating KernelHaven ..."
 cd $BASEDIR
 
+if [ -d .git ]; then
+   mv .git .git.backup
+fi
+
 
 for file in diffs/*.diff; do
     [ -e "$file" ] || continue
@@ -15,5 +19,9 @@ for file in diffs/*.diff; do
     sed "s/$(echo DIFF_FILE_GENERATED_VALUE | sed -e 's/\([[\/.*]\|\]\)/\\&/g')/$(echo $file | sed -e 's/[\/&]/\\&/g')/g" config/configuration-incremental.properties > configuration-incremental.properties
     exec java "-Xms${JVM_MIN_HEAP}" "-Xmx${JVM_MAX_HEAP}" -jar KernelHaven.jar configuration-incremental.properties
 done
+
+if [ -d .git.backup ]; then
+   mv .git.backup .git
+fi
 
 exit 0
