@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
 BASEDIR=$(dirname "$0")
-JVM_MIN_HEAP=4G
-JVM_MAX_HEAP=16G
+JVM_MIN_HEAP=100G
+JVM_MAX_HEAP=200G
 
 echo "*** Running as user $(whoami) using basedir: $BASEDIR ..."
 
