@@ -16,7 +16,11 @@ rm -rf source-code
 rm -rf cache
 rm -rf hybrid_cache
 rm -rf archive
+rm -rf time
 
+mkdir time
+mkdir time/incremental
+mkdir time/reference
 mkdir archive
 mkdir archive/incremental
 mkdir archive/reference

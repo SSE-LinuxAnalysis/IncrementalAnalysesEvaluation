@@ -4,3 +4,6 @@ output/*
 res/*
 log/*
 source-code/linux/*
+configuration-incremental.properties
+configuration-reference.properties
+
