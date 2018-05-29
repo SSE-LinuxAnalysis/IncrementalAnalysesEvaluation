@@ -3,7 +3,10 @@
 output/*
 res/*
 log/*
-source-code/linux/*
+source-code/linux/
+hybrid_cache/
+archive/
+time/
 configuration-incremental.properties
 configuration-reference.properties
 

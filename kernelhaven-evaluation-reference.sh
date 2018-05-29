@@ -19,7 +19,6 @@ for file in diffs/*.diff; do
         mv .git .git.backup
     fi
 
-
     # get the complete path to the diff-file
     filepath=$(realpath $file)
     cd source-code/linux
