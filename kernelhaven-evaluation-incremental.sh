@@ -5,7 +5,7 @@ JVM_MIN_HEAP=10G
 JVM_MAX_HEAP=50G
 
 echo "*** Running as user $(whoami) using basedir: $BASEDIR ..."
-echo "*** Updating KernelHaven ..."
+
 cd $BASEDIR
 
 if [ -d .git ]; then
