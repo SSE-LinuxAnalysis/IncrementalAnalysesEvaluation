@@ -20,6 +20,22 @@ for file in diffs/*.diff; do
     sed "s/$(echo DIFF_FILE_GENERATED_VALUE | sed -e 's/\([[\/.*]\|\]\)/\\&/g')/$(echo $file | sed -e 's/[\/&]/\\&/g')/g" config/configuration-incremental.properties > configuration-incremental.properties
     touch ./time/incremental/time-${file##*/}.log
     /usr/bin/time -v -o ./time/incremental/time-${file##*/}.log java "-Xms${JVM_MIN_HEAP}" "-Xmx${JVM_MAX_HEAP}" -jar KernelHaven.jar configuration-incremental.properties
+    
+    cd ./log/incremental
+    # get name of most recent log file that has not be renamed yet
+    LOG_FILE = $(find -maxdepth 1 -name 'KernelHaven*' -printf "%T+\t%p\n" | sort | sed '{$!d}' | tail -c +32)
+    if [ -n "$LOG_FILE" ]; then
+        # rename the file
+        mv $LOG_FILE log-${file##*/}
+    fi
+    cd ${BASEDIR}
+    
+    cd ./output/incremental
+    OUTPUT_FILE = $(find -maxdepth 1 -name 'Analysis*' -printf "%T+\t%p\n" | sort | sed '{$!d}' | tail -c +32)
+    if [ -n "$OUTPUT_FILE" ]; then
+        mv $OUTPUT_FILE output-${file##*/}
+    fi
+    cd ${BASEDIR} 
 done
 
 if [ -d .git.backup ]; then
