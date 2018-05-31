@@ -34,6 +34,21 @@ for file in diffs/*.diff; do
     echo "*** Running KernelHaven..."
     touch ./time/reference/time-${file##*/}.log
     /usr/bin/time -v -o ./time/reference/time-${file##*/}.log java "-Xms${JVM_MIN_HEAP}" "-Xmx${JVM_MAX_HEAP}" -jar KernelHaven.jar configuration-reference.properties
+    
+    cd log/reference
+    # get name of most recent log file that has not be renamed yet
+    LOG_FILE=$(find -maxdepth 1 -name 'KernelHaven*' -printf "%T+\t%p\n" | sort | sed '{$!d}' | tail -c +32)
+    if [ -n "$LOG_FILE" ]; then
+        # rename the file
+        mv "$LOG_FILE" log-${file##*/}.log
+    fi
+    
+    cd ../../output/reference
+    OUTPUT_FILE=$(find -maxdepth 1 -name 'Analysis*' -printf "%T+\t%p\n" | sort | sed '{$!d}' | tail -c +32)
+    if [ -n "$OUTPUT_FILE" ]; then
+        mv "$OUTPUT_FILE" output-${file##*/}.csv
+    fi
+    cd ../../
 done
 
 
