@@ -45,25 +45,23 @@ Variability-mode:
 
 The execution of the QualityEvaluator can be achieved through a command line call:
 
-``
-# Change-mode (default)
+Change-mode (default)
+
+```
 java -jar QualityEvaluator.jar "/path/to/rootfolder_of_kernelhaven_execution"
 java -jar QualityEvaluator.jar -c "/path/to/rootfolder_of_kernelhaven_execution"
 java -jar QualityEvaluator.jar -change "/path/to/rootfolder_of_kernelhaven_execution"
+```
 
-# Variability-mode
+Variability-mode
+
+```
 java -jar QualityEvaluator.jar -v "/path/to/rootfolder_of_kernelhaven_execution"
 java -jar QualityEvaluator.jar -variability "/path/to/rootfolder_of_kernelhaven_execution"
-
-``
+```
 
 In order to write the evaluation result to your filesystem, use ``> quality.log`` on unix systems:
 
-``
+```
 java -jar QualityEvaluator.jar "/path/to/rootfolder_of_kernelhaven_execution" > quality.log
-
-``
-
-
-
- 
+```
