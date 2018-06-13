@@ -1,2 +1,0 @@
-# List of urls from which files get downloaded to the data folder upon start
-http://jenkins.sse.uni-hildesheim.de/view/KernelHaven/job/KernelHaven_Infrastructure/lastSuccessfulBuild/artifact/build/jar/KernelHaven.jar

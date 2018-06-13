@@ -17,6 +17,8 @@ rm -rf cache
 rm -rf hybrid_cache
 rm -rf archive
 rm -rf time
+rm -rf configuration-incremental.properties
+rm -rf configuration-reference.properties
 
 mkdir time
 mkdir time/incremental
