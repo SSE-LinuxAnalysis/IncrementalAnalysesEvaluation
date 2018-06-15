@@ -9,4 +9,5 @@ archive/
 time/
 configuration-incremental.properties
 configuration-reference.properties
+.project
 
