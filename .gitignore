@@ -10,3 +10,4 @@ time/
 configuration-incremental.properties
 configuration-reference.properties
 .project
+.DS_Store
