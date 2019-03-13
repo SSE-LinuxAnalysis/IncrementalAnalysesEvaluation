@@ -8,12 +8,10 @@ This repository contains the set of files used for the evaluation run of the Inc
 
 this creates all required folders and removes files from any previous executions of KernelHaven. This script should at least be executed once before calling kernelHaven through ``kernelhaven-evaluation-incremental.sh`` or ``kernelhaven-evaluation-reference.sh``
 
-### unpack-diffs.sh
+### get-evaluation-diffs.sh
 
-while you may choose to run the evaluation based on your own set of diff files (e.g. by using [DiffGenerator](https://github.com/moritzfl/IncrementalAnalysesHelpers) ), we include a set of diff files. You can unpack them into the diffs-folder by using this script.
-Those diff files represent the commits to the main branch of the linux kernel from commit ``4fbd8d194f06c8a3fd2af1ce560ddb31f7ec8323 Linux 4.15-rc1`` to commit ``d8a5b80568a9cb66810e75b182018e9edb68e8ff Linux 4.15`` of the [linux-kernel](https://github.com/torvalds/linux).
-
-*Note: for the evaluation performed by us, ``00129-git.diff`` was disabled by renaming it to ``00129-git.diff.disabled`` after unpacking as it represents no changes.*"
+While you may choose to run the evaluation based on your own set of diff files (e.g. by using [DiffGenerator](https://github.com/moritzfl/IncrementalAnalysesHelpers) ), you can also download the set of diff files.
+Those diff files represent the commits to the main branch of the linux kernel from commit ``c36c7a7c4034f2ef35c6aa6821e7c82d9968dba4`` to commit ``d8a5b80568a9cb66810e75b182018e9edb68e8ff`` of the [linux-kernel](https://github.com/torvalds/linux).
 
 ### kernelhaven-evaluation-incremental.sh
 
