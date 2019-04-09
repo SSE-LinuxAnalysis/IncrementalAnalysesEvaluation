@@ -10,8 +10,8 @@ this creates all required folders and removes files from any previous executions
 
 ### get-evaluation-diffs.sh
 
-While you may choose to run the evaluation based on your own set of diff files (e.g. by using [DiffGenerator](https://github.com/moritzfl/IncrementalAnalysesHelpers) ), you can also download the set of diff files.
-Those diff files represent the commits to the main branch of the linux kernel from commit ``c36c7a7c4034f2ef35c6aa6821e7c82d9968dba4`` to commit ``d8a5b80568a9cb66810e75b182018e9edb68e8ff`` of the [linux-kernel](https://github.com/torvalds/linux).
+While you may choose to run the evaluation based on your own set of diff files (e.g. by using [DiffGenerator](https://github.com/moritzfl/IncrementalAnalysesHelpers) ), you can also download the set of diff files we used by executing this script. This script automatically places the files in the diff-folder. All diff-files within that folders will be used for execution through ``kernelhaven-evaluation-incremental.sh`` or ``kernelhaven-evaluation-incremental``.
+Those diff files represent the commits to the main branch of the [linux-kernel](https://github.com/torvalds/linux) from commit ``0c744ea4f77d72b3dcebb7a8f2684633ec79be88`` to commit ``866a30efdcb63a330b480600d0b501547f9a5a58``. This covers the time from January to September 2017.
 
 ### kernelhaven-evaluation-incremental.sh
 
