@@ -4,6 +4,18 @@ This repository contains the set of files used for the evaluation run of the Inc
 
 ## Scripts to generate Execution Results
 
+First you need to download the scripts on your machine.
+There are several options to accomplish this:
+
+```
+git clone https://github.com/moritzfl/IncrementalAnalysesEvaluation.git
+```
+
+```
+wget -O incremental_evaluation.zip https://codeload.github.com/moritzfl/IncrementalAnalysesEvaluation/zip/master
+unzip incremental_evaluation.zip
+```
+
 ### reset-and-init.sh
 
 this creates all required folders and removes files from any previous executions of KernelHaven. This script should at least be executed once before calling kernelHaven through ``kernelhaven-evaluation-incremental.sh`` or ``kernelhaven-evaluation-reference.sh``
