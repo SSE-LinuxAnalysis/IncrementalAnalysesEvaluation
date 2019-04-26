@@ -4,7 +4,8 @@ This repository contains the set of files used for the evaluation run of the Inc
 
 ## Scripts to generate Execution Results
 
-First you need to download the scripts on your machine.
+You can use our Linux-VM provided in the release section for executing the experiment. On that machine, you first need to download the scripts and KernelHaven executables for executing the experiment.
+
 There are several options to accomplish this:
 
 ```
@@ -16,14 +17,14 @@ wget -O incremental_evaluation.zip https://codeload.github.com/moritzfl/Incremen
 unzip incremental_evaluation.zip
 ```
 
-### reset-and-init.sh
 
-this creates all required folders and removes files from any previous executions of KernelHaven. This script should at least be executed once before calling kernelHaven through ``kernelhaven-evaluation-incremental.sh`` or ``kernelhaven-evaluation-reference.sh``
+### reset-and-init.sh
+This creates all required folders and removes files from any previous executions of KernelHaven. This script should at least be executed once before calling kernelHaven through ``kernelhaven-evaluation-incremental.sh`` or ``kernelhaven-evaluation-reference.sh``. Otherwise KernelHaven will not run as it is missing directories that the provided configuration files rely on.
 
 ### get-evaluation-diffs.sh
 
 While you may choose to run the evaluation based on your own set of diff files (e.g. by using [DiffGenerator](https://github.com/moritzfl/IncrementalAnalysesHelpers) ), you can also download the set of diff files we used by executing this script. This script automatically places the files in the diff-folder. All diff-files within that folders will be used for execution through ``kernelhaven-evaluation-incremental.sh`` or ``kernelhaven-evaluation-incremental``.
-Those diff files represent the commits to the main branch of the [linux-kernel](https://github.com/torvalds/linux) from commit ``0c744ea4f77d72b3dcebb7a8f2684633ec79be88`` to commit ``866a30efdcb63a330b480600d0b501547f9a5a58``. This covers the time from January to September 2017.
+Those diff files represent the commits to the main branch of the [linux-kernel](https://github.com/torvalds/linux) from commit ``0c744ea4f77d72b3dcebb7a8f2684633ec79be88`` to commit ``866a30efdcb63a330b480600d0b501547f9a5a58``. This covers the time from January 2017 to September 2017.
 
 ### kernelhaven-evaluation-incremental.sh
 
