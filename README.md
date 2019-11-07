@@ -2,6 +2,12 @@
 
 This repository contains the set of files used for the evaluation run of the IncrementalAnalysesInfrastructure in conjunction with IncrementalDeadCodeAnalysis. The data gathered through executing the analysis was analyzed using the tools QualityEvaluator and PerformaceEvaluator which can be found [here](https://github.com/moritzfl/IncrementalAnalysesHelpers). Please refer to the Readme-file of that project for instructions on how to evaluate the data with our tools.
 
+In the releases-section of this repository, we also provide downloads for the virtual machine that was used to perform our experiment. 
+
+While the virtual machine is specced according to the powerful server hardware that we used to produce our results, it is worth noting that it will run on significantly lower-end hardware. We successfully tested our setup with 32GB of RAM. The processor speed is relatively unimportant as to whether the experiment will run but keep in mind that executions will be very slow with a low number of CPU cores or a slower clock speed of the CPU.
+In case a lower amount of RAM, you will need to adjust the JVM parameters in kernelhaven-evaluation-incremental.sh and kernelhaven-evaluation-reference.sh to accomodate for the RAM available.
+In case of a lower amout of CPU cores, you will need to adjust the number of threads used for the analysis accordingly to what your CPU offers.
+
 ## Scripts to generate Execution Results
 
 You can use our Linux-VM provided in the release section for executing the experiment. On that machine, you first need to download the scripts and KernelHaven executables for executing the experiment.
