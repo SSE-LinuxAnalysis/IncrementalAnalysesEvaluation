@@ -20,7 +20,7 @@ unzip incremental_evaluation.zip
 
 
 ### reset-and-init.sh
-This creates all required folders and removes files from any previous executions of KernelHaven. This script should at least be executed once before calling kernelHaven through ``kernelhaven-evaluation-incremental.sh`` or ``kernelhaven-evaluation-reference.sh``. Otherwise KernelHaven will not run as it is missing directories that the provided configuration files rely on.
+This is used to setup the initial folder structure. If results reside in the folders from previous execution, this script removes them. This script should at least be executed once before calling kernelHaven through ``kernelhaven-evaluation-incremental.sh`` or ``kernelhaven-evaluation-reference.sh``. Otherwise KernelHaven will not run as it is missing directories that the provided configuration files rely on.
 
 ### get-evaluation-diffs.sh
 
