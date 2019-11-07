@@ -1,6 +1,6 @@
 # IncrementalAnalysesEvaluation
 
-This repository contains the set of files used for the evaluation run of the IncrementalAnalysesInfrastructure in conjunction with IncrementalDeadCodeAnalysis. The data gathered through executing the analysis was analyzed using the tools QualityEvaluator and PerformaceEvaluator which can be found [here](https://github.com/moritzfl/IncrementalAnalysesHelpers)
+This repository contains the set of files used for the evaluation run of the IncrementalAnalysesInfrastructure in conjunction with IncrementalDeadCodeAnalysis. The data gathered through executing the analysis was analyzed using the tools QualityEvaluator and PerformaceEvaluator which can be found [here](https://github.com/moritzfl/IncrementalAnalysesHelpers). Please refer to the Readme-file of that project for instructions on how to evaluate the data with our tools.
 
 ## Scripts to generate Execution Results
 
@@ -9,11 +9,12 @@ You can use our Linux-VM provided in the release section for executing the exper
 There are several options to accomplish this:
 
 ```
-git clone https://github.com/moritzfl/IncrementalAnalysesEvaluation.git
-```
-
-```
+// for the most current version
 wget -O incremental_evaluation.zip https://codeload.github.com/moritzfl/IncrementalAnalysesEvaluation/zip/master
+unzip incremental_evaluation.zip
+
+// for a specific version (in this case 4.0)
+wget -O incremental_evaluation.zip https://codeload.github.com/moritzfl/IncrementalAnalysesEvaluation/zip/4.0
 unzip incremental_evaluation.zip
 ```
 
@@ -27,7 +28,8 @@ While you may choose to run the evaluation based on your own set of diff files (
 
 ### kernelhaven-evaluation-incremental.sh
 
-Runs the evaluation on all diffs-files in the ``./diff`` folder using the configuration file ``./config/configuration-incremental.properties`` as a template.
+Runs the evaluation on all diffs-files in the ``./diff`` folder using the configuration file ``./config/configuration-incremental.properties`` as a template. We do include a few configurations that can be used here in the folder `./config/incremental-configs/`. They names of the files correspond to the naming in our publication.
+
 When KernelHaven is executed it will work with a copy of the configuration file where DIFF_FILE_GENERATED_VALUE is replaced with the name of the current diff-file. It is assumed that the diff-files within the ``./diff/`` folder are ordered chronologically through their filename in alphabetical order.
 
 ### kernelhaven-evaluation-reference.sh
