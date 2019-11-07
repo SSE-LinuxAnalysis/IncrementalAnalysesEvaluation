@@ -13,7 +13,7 @@ There are several options to accomplish this:
 wget -O incremental_evaluation.zip https://codeload.github.com/moritzfl/IncrementalAnalysesEvaluation/zip/master
 unzip incremental_evaluation.zip
 
-// for a specific version (in this case 4.0)
+// for a specific version (in this case 4.0, this is the version used for our publication)
 wget -O incremental_evaluation.zip https://codeload.github.com/moritzfl/IncrementalAnalysesEvaluation/zip/4.0
 unzip incremental_evaluation.zip
 ```
